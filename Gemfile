@@ -71,3 +71,9 @@ gem 'devise'
 gem 'bootstrap-sass'
 # Adds font-awesome
 gem 'font-awesome-rails'
+# Adds animate.css
+gem 'animate.css-rails'
+# Adds hamburgers
+gem 'hamburgers'
+# Adds jquery
+gem 'jquery-rails'
