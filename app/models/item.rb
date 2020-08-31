@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true, numericality: true
 
-  has_many :listitems
-  has_many :carts, through: :listitems
+  has_many :list_items
+  has_many :carts, through: :list_items
 
 end

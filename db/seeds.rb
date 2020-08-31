@@ -11,6 +11,7 @@ require 'faker'
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
+ListItem.destroy_all
 
 10.times do |x|
   user = User.create!(
