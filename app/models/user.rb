@@ -8,9 +8,13 @@ class User < ApplicationRecord
 
   def cart_creation
     puts "hello"
+    puts email
+    puts User.find_by(email: email).id
+     
     Cart.create(
-      user_id: User.last.id
-    )
+      user_id: User.find_by(email: email).id
+     )
+
   end
 
   
