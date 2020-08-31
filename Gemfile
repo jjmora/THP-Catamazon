@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.7.0'
+#ruby '2.5.1' # The Hacking Project Version
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
@@ -66,3 +67,8 @@ gem 'table_print'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'letter_opener'
 gem 'devise'
+
+# bootsrap styling
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'font-awesome-rails'
