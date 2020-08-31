@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: catAmazon_production
-  username: catAmazon
-  password: <%= ENV['CATAMAZON_DATABASE_PASSWORD'] %>
+  username:
+  password:
