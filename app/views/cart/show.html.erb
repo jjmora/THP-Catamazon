@@ -30,7 +30,9 @@
     <tr>
       <td>Sum</td>
       <td><%= sum %> €</td>
-      <td><%= button_to "Pay", order_index_path(:price => sum), class: "btn btn-warning" %></td>
+      <% if current_user %>
+        <td><%= button_to "Pay", order_index_path(:price => sum), class: "btn btn-warning" %></td>
+      <% end %>
     </tr>
   </tfoot>
 </table>
