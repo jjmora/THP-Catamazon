@@ -17,9 +17,17 @@ ListItem.destroy_all
   user = User.create!(
     email: Faker::Internet.email,
     password:"azerty",
-    password_confirmation:"azerty"
+    password_confirmation:"azerty",
+    is_admin: false
   )
 end
+
+User.create(
+  email: "admin@admin.com",
+  password:"azerty",
+  password_confirmation:"azerty",
+  is_admin: true
+)
 
 20.times do |x|
   item = Item.create(
