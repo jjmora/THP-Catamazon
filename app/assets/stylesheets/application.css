@@ -12,4 +12,29 @@
  *
  *= require_tree .
  *= require_self
+//= require bootstrap.min
+//= require owl.carousel.min
+//= require slicknav.css
+//= require flaticon.css
+//= require progressbar_barfiller.css
+//= require gijgo.css
+//= require animate.min.css
+//= require animated-headline.css
+//= require magnific-popup.css
+//= require fontawesome-all.min.css
+//= require themify-icons.css
+//= require slick.css
+//= require nice-select.css
+//= require style.css
+
+
+
+
+<!-- Slick-slider , Owl-Carousel ,slick-nav -->
+//= require owl.carousel.min
+
+<!-- One Page, Animated-HeadLin, Date Picker -->
+
+
+
  */

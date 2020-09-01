@@ -1,8 +1,39 @@
-<h1>Items#index</h1>
-<% @items.each do |item| %>
-  <p>Title: <%= item.title %></p>
-  <p>Title: <%= item.description %></p>
-  <p>Title: <%= item.price %></p>
-  <%= link_to item.title, item_path(item.id) %>
-  <br>
-<% end %>
+<div class="new-arrival">
+    <div class="container">
+                        
+        <div class="row">
+           <% @items.each do |item| %>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+           
+                <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+           
+                    <div class="popular-img">
+                        <img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg" alt="">
+          
+                        <div class="favorit-items">
+                            <!-- <span class="flaticon-heart"></span> -->
+                            <img src="app/assets/images/gallery/favorit-card.png" alt="">
+                        </div>
+                    </div>
+           
+                    <div class="popular-caption">
+                        <h3> <%= link_to item.title, item_path(item.id) %></h3>
+                        <p><%= item.description %></p>
+
+                        <div>
+                        <%= item.price %> €
+                        </div>  
+
+                        <div class="rating mb-10">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>                         
+                </div>    
+            </div>          
+        <% end %>
+      </div>    
+    
