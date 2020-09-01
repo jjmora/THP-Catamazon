@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :items
   resources :cart, only: [:create, :update, :new, :destroy, :show]
   resources :list_items, only: [:create, :update, :new, :destroy]
-  resources :order, only: [:create, :update, :destroy]
+
   resources :charges
   
+
+  resources :order, only: [:index, :show, :create, :update, :destroy]
+
 end
