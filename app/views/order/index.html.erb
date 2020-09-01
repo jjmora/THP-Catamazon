@@ -6,8 +6,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Price</th>
-      <th scope="col">Items</th>
-      <th scope="col">Handle</th>
+      <th scope="col">User</th>
+      <th scope="col">User id</th>
+      <th scope="col">Details</th>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +16,13 @@
       <tr>
         <th scope="row"><%= order.id %></th>
         <td><%= order.price %></td>
-        <td><%= order.price %></td>
-        <td><%= order.price %></td>
-
+        <td><%= order.user.email %></td>
+        <td><%= order.user.id %></td>
+        <td>
+        <%= button_to(order_path(order.id), class: "btn", method: 'get') do %>
+          <i class="fas fa-info-circle fa-2x"></i>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
