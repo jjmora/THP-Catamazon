@@ -71,5 +71,4 @@ gem 'devise'
 # bootsrap styling
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
-gem 'font-awesome-rails'
-gem 'sass-rails'
+gem 'font-awesome-sass'
