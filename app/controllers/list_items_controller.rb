@@ -7,6 +7,8 @@ class ListItemsController < ApplicationController
     puts " # "*20
     puts "New ListItem Created: cart_id: #{@cart_id} and item_id: #{@item_id}"
     puts " # "*20
+    flash[:warning] = "The item was added to your cart"
+    redirect_to items_path
   end
   
   def update
