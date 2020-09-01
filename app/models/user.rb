@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one :cart
   after_create :cart_creation
+
+  validates :email, uniqueness: true
 
   def cart_creation
     puts "hello"
@@ -18,7 +21,7 @@ class User < ApplicationRecord
   end
 
   
-  has_one :cart
+  
 
 
 end
