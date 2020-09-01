@@ -9,19 +9,21 @@
                                 <a href="index.html"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/cat-logo-design-template-6ab8c8b9fd3d5c7b60685ded66927dea_screen.jpg?ts=1582354011" alt="" style="width:150px;height:150px;"></a>
                             </div>
                             <!-- Main-menu -->
-                            <div class="main-menu  d-none d-lg-block">
+                            <div class="main-menu d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li> 
-                                        <li><a href="shop.html">shop</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href=<%=root_path%>>Home</a></li> 
+                                        <li><a href="#">shop</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Blog</a></li>
                                         <li><a href="blog.html">Login</a>
                                         <ul class="submenu">
                                             <% if user_signed_in? %>        
-                                                  <%=current_user.email%>        
-                                                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+                                                  <p class="text-center">BIENVENUE</p>
                                                   <li><%= link_to "Mon compte" %></li>
+                                                  <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
+                                                  <li><%= link_to "Mes commandes" %></li>
+                                                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
                                             <% else %>          
                                                   <li><%= link_to "Se connecter", new_user_session_path %></li>
                                                   <li><%= link_to "S'inscrire", new_user_registration_path %></li>
@@ -51,7 +53,8 @@
                                     <li>
                                         <div class="card-stor">
                                             <img src="assets/img/gallery/card.svg" alt="">
-                                            <span>0</span>
+                                            <span> 
+                                            </span>
                                         </div>
                                     </li>
                                 </ul>
