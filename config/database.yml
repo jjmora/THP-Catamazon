@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: catAmazon_production
-  username:
-  password:
+
