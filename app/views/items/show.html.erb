@@ -5,3 +5,6 @@
 <p>Title: <%= @item.price %></p>
 
 <%= link_to "Items", items_path %>
+<% if user_signed_in? %>
+  <%= link_to "add to cart", list_items_path, method: :post, class: "btn btn-primary"%>
+<%end%>

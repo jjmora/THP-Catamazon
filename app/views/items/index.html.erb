@@ -31,6 +31,12 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </div>
+
+                        <div>
+                        <% if user_signed_in? %>
+                            <%= link_to "add to cart", list_items_path, method: :post, class: "btn btn-primary"%>
+                        <%end%>
+                        </div>
                     </div>                         
                 </div>    
             </div>          
