@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
 
   has_one :cart
   has_many :orders
@@ -15,10 +15,10 @@ class User < ApplicationRecord
     puts "hello"
     puts email
     puts User.find_by(email: email).id
-     
+    
     Cart.create(
       user_id: User.find_by(email: email).id
-     )
+    )
 
   end
 
