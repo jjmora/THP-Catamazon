@@ -1,3 +1,4 @@
+  <header>
         <!-- Header Start -->
         <div class="header-area ">
             <div class="main-header header-sticky">
@@ -12,47 +13,26 @@
                             <div class="main-menu d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-<<<<<<< HEAD
-                                        <li><a href="#">Home</a></li> 
-                                        <li><a href="#">shop</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Login</a>
-=======
-                                        <li><a href=<%=root_path%>>Home</a></li> 
+                                        <li><a href=/>Home</a></li> 
                                         <li><a href="#">shop</a></li>
                                         <li><a href="#">About</a></li>
                                         <li><a href="#">Blog</a></li>
                                         <li><a href="blog.html">Login</a>
->>>>>>> 11721c0a66ae9f5fc0628e82a5d0e698ecf2f201
                                         <ul class="submenu">
-                                            <% if user_signed_in? %>        
                                                   <p class="text-center">BIENVENUE</p>
-                                                  <li><%= link_to "Mon compte" %></li>
-                                                  <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
-                                                  <li><%= link_to "Mes commandes" %></li>
-                                                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
-                                            <% else %>          
-                                                  <li><%= link_to "Se connecter", new_user_session_path %></li>
-                                                  <li><%= link_to "S'inscrire", new_user_registration_path %></li>
-                                            <% end %>
+                                                  <li><a href="/">Mon compte</a></li>
+                                                  <li><a href="/cart/38">Mon panier</a></li>
+                                                  <li><a href="/">Mes commandes</a></li>
+                                                  <li><a rel="nofollow" data-method="delete" href="/users/sign_out">Se déconnecter</a></li>
                                         </ul>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                               </div>   
-</div>
-                       
+
+                        </div>
                         <div class="header-right1 d-flex align-items-center">
                             <!-- Social -->
-<<<<<<< HEAD
-                            <div class="header-social d-none d-lg-block">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            </div></div>
-                           </div>
-=======
                             <div class="header-social d-none d-md-block">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
@@ -77,7 +57,6 @@
                             </div>
                         </div>
                         <!-- Mobile Menu -->
->>>>>>> 11721c0a66ae9f5fc0628e82a5d0e698ecf2f201
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -86,3 +65,4 @@
             </div>
         </div>
         <!-- Header End -->
+</header>
