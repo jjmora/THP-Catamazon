@@ -1,8 +1,12 @@
 class ListItemsController < ApplicationController
   def create
     @item_id = params[:item_id]
-
-    @list_item = ListItem.new(cart_id: current_user.id, item_id: @item_id)
+    @cart_id = Cart.where(user_id: current_user.id).first.id
+    puts @cart_id
+    @list_item = ListItem.create!(cart_id: @cart_id, item_id: @item_id)
+    puts " # "*20
+    puts "New ListItem Created: cart_id: #{@cart_id} and item_id: #{@item_id}"
+    puts " # "*20
   end
   
   def update
