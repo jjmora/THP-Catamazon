@@ -45,10 +45,10 @@
                                     <li>
                                         <%if user_signed_in?%>
                                         <div class="card-stor">
-                                            <span> 
+                                            <a href=<%=cart_path(current_user.id)%>>
                                             <i class="fas fa-shopping-basket"></i>
-                                            <%=number_of_items_on_cart%>
-                                            </span>
+                                            </a>
+                                            <span><%=number_of_items_on_cart%></span>
                                         </div>
                                         <%end%>
                                     </li>
