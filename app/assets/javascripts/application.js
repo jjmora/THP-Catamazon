@@ -13,12 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require modernizr
-//= require pooper
 //= require bootstrap
+//= require bootstrap-sprockets
 //= require owl.carousel.min
 //= require slick.min
 //= require jquery.slicknav.min
@@ -37,7 +35,6 @@
 //= require jquery.form
 //= require jquery.validate.min
 //= require mail-script
-//= require jquery.ajaxchimp
 //= rquire plugins
 //= require main
 //= require_tree .
