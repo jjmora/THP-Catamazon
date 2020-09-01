@@ -3,6 +3,7 @@
   <thead>
     <tr class="text-center">
       <th scope="col">#</th>
+      <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">Price</th>
       <th scope="col">Action</th>
@@ -17,9 +18,10 @@
         <%sum+=list.item.price%>
         <%x+=1%>
         <td><%= x-1%></td>
+        <td><%= list.id%></td>
         <td><%= list.item.title%></td>
         <td><%= list.item.price%> €</td>
-        <td>Button</td>
+        <td><%= link_to "Delete", list_item_path(list.id, :cart_id => list.cart_id), method: 'delete', class: 'btn btn-danger' %></td>
       <%end%>
     </tr>
     <%end%>
