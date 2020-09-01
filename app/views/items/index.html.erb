@@ -34,7 +34,7 @@
 
                         <div>
                         <% if user_signed_in? %>
-                            <%= link_to "add to cart", list_items_path, method: :post, class: "btn btn-primary"%>
+                            <%= link_to "add to cart", list_items_path(:item_id => item.id), method: :post, class: "btn btn-primary"%>
                         <%end%>
                         </div>
                     </div>                         
