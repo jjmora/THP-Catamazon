@@ -31,7 +31,7 @@
       <td>Sum</td>
       <td><%= sum %> €</td>
       <% if current_user %>
-        <td><%= button_to "Pay", order_index_path(:price => sum), class: "btn btn-warning" %></td>
+        <td><%= link_to "Pay", new_charge_path(:price => sum), class: "btn btn-warning" %></td>
       <% end %>
     </tr>
   </tfoot>

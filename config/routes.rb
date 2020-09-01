@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :list_items, only: [:create, :update, :new, :destroy]
 
   resources :charges
+  
 
   resources :order, only: [:index, :show, :create, :update, :destroy]
   resources :user, only: [:show]
