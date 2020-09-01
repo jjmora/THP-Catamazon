@@ -21,13 +21,6 @@ ListItem.destroy_all
   )
 end
 
-10.times do |x|
-  x+=1
-  cart = Cart.create!(
-    user_id: User.find(User.first.id).id + x-1
-  )
-end
-
 20.times do |x|
   item = Item.create(
     title: Faker::Creature::Cat.name,
