@@ -1,0 +1,30 @@
+<h1>Orders#show</h1>
+<h2>Orders List</h2>
+<p>Title: <%= @order.id %></p>
+<p>Items: <%= @order.items.count %></p> 
+<p>Total Price: <%= @order.price %></p>
+
+<% @items %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= item.price %></td>
+        <td><%= item.image_url %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

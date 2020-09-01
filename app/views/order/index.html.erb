@@ -1,0 +1,29 @@
+<h1 class="text-center">Orders</h1>
+
+<% Order.first.items_ordered %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Price</th>
+      <th scope="col">User</th>
+      <th scope="col">User id</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <th scope="row"><%= order.id %></th>
+        <td><%= order.price %></td>
+        <td><%= order.user.email %></td>
+        <td><%= order.user.id %></td>
+        <td>
+        <%= button_to(order_path(order.id), class: "btn", method: 'get') do %>
+          <i class="fas fa-info-circle fa-2x"></i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
