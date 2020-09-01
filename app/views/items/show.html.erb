@@ -8,5 +8,3 @@
 <% if user_signed_in? %>
   <%= link_to "add to cart", list_items_path, method: :post, class: "btn btn-primary"%>
 <%end%>
-<%= current_user.id %>
-<%= user_signed_in? %>
