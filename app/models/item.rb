@@ -7,4 +7,7 @@ class Item < ApplicationRecord
   has_many :list_items
   has_many :carts, through: :list_items
 
+  has_many :list_orders
+  has_many :orders, through: :list_orders
+
 end

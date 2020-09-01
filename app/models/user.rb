@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :cart
+  has_many :orders
+
   after_create :cart_creation
 
   validates :email, uniqueness: true
