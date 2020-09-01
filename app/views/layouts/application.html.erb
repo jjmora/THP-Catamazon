@@ -10,6 +10,51 @@
   </head>
 
   <body>
-    <%= yield %>
+  <header>
+  <nav class="navbar navbar-expand-lg bg-green scrolling-navbar">
+    <%= link_to "The Gossip Project", index_path, :class => "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto smooth-scroll">
+        <li class="nav-item">
+          <%= link_to "Accueil", index_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Notre équipe", team_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", contact_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Votre session
+          </a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown-connexion">
+            <% if logged_in? %>
+              <%= link_to current_user.first_name, {controller: "users", action: "index", id: current_user.id}, class: "dropdown-item" %>
+              <%= link_to "Déconnexion", session_path(session.id), method: :delete, class: "dropdown-item" %>
+            <% else %>
+              <%= link_to "Inscrivez-vous", {controller: "users", action: "new"}, class: "dropdown-item" %>
+              <%= link_to "Connexion", {controller: "sessions", action: "new"}, class: "dropdown-item" %>
+              <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<% flash.each do |key, value| %>
+  <div class="alert-dismissible fade show alert alert-<%= key %>"><%= value %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+<% end %>
+
+  <%= yield %>
   </body>
 </html>
