@@ -27,7 +27,9 @@
     <tfoot>
     <tr>
       <td>Sum</td>
-      <td><%=sum%> €</td>
+      <td><%= sum %> €</td>
+      <td><%= button_to "Pay", class: "btn btn-warning" %></td>
     </tr>
   </tfoot>
 </table>
+<%= link_to "Pay", class: "btn btn-warning" %>
