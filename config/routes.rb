@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   root to: 'items#index'
   resources :items
-  resources :cart, only: [:update, :new, :destroy]
-  resources :list_items, only: [:update, :new, :destroy]
+  resources :cart, only: [:create, :update, :new, :destroy, :show]
+  resources :list_items, only: [:create, :update, :new, :destroy]
 end

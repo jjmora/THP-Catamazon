@@ -19,9 +19,9 @@
                                         <li><a href="#">Login</a>
                                         <ul class="submenu">
                                             <% if user_signed_in? %>        
-                                                  <%=current_user.name%>        
+                                                  <%=current_user.email%>        
                                                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
-                                                  <li><%= link_to "Mon compte", user_path(current_user) %></li>
+                                                  <li><%= link_to "Mon compte" %></li>
                                             <% else %>          
                                                   <li><%= link_to "Se connecter", new_user_session_path %></li>
                                                   <li><%= link_to "S'inscrire", new_user_registration_path %></li>
