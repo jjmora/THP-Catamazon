@@ -1,6 +1,8 @@
 class ListItemsController < ApplicationController
   def create
-    puts "list items create"
+    @item_id = params[:item_id]
+
+    @list_item = ListItem.new(cart_id: current_user.id, item_id: @item_id)
   end
   
   def update
