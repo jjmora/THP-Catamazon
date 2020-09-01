@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :list_items, only: [:create, :update, :new, :destroy]
   resources :order, only: [:create, :update, :destroy]
   resources :charges
+  
 end
