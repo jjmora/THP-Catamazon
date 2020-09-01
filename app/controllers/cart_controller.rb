@@ -11,4 +11,10 @@ class CartController < ApplicationController
 
   def destroy
   end
+
+  def show
+    @id = params[:id]
+    @lists = ListItem.all
+  end
+
 end
