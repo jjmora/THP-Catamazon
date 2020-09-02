@@ -13,7 +13,6 @@ class OrderController < ApplicationController
   def create   
     @price = params[:price]
     @order = Order.create!(price: @price, user_id: current_user.id )
-    #On recupere les items du Cart
     @current_cart = Cart.where(user_id: current_user.id)
     @current_cart_items = @current_cart.first.items
 
