@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
 //= require abyone.css
+//= require cart.css
 //= require bootstrap.min
 //= require owl.carousel.min
 //= require slicknav.css
