@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   
 
   resources :order, only: [:index, :show, :create, :update, :destroy]
-  resources :user, only: [:show]
+  resources :users, only: [:show]
 end

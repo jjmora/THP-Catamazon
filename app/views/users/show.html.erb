@@ -7,19 +7,20 @@
 <ul>
   <li>Identifiant: <%= @user.id %></li>
   <li>E-mail: <%= @user.email %></li>
-  <li>Administrateur: <%= @user.is_admin %></li>
+  <li>Administrateur: <%= @user.is_admin? %></li>
   <li>Avatar attaché: <%= @user.avatar.attached? %></li>
 </ul>
 
-<!-- show orders if admin -->
-<%= if @user.is_admin %>
-  <%= link_to "Orders", _path%>
-<% end %>
-
 <!-- show avatar if available -->
-<%= if @user.avatar.attached?%>
+<%= if @user.avatar.attached? %>
   <%= image_tag @user.avatar, alt: 'avatar' %>
 <%else%>
   <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
 <%end%>
+
+<!-- show orders if admin -->
+<%= if @user.is_admin? %>
+  <%= link_to "Orders", _path%>
+<% end %>
+
 
