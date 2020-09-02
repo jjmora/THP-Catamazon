@@ -1,3 +1,4 @@
+    <header>
         <!-- Header Start -->
         <div class="header-area ">
             <div class="main-header header-sticky">
@@ -6,36 +7,27 @@
                         <div class="header-left d-flex align-items-center">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href=<%=root_path%>><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/cat-logo-design-template-6ab8c8b9fd3d5c7b60685ded66927dea_screen.jpg?ts=1582354011" alt="" style="width:150px;height:150px;"></a>
+                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                             <!-- Main-menu -->
-                            <div class="main-menu d-none d-lg-block">
+                            <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href=<%=root_path%>>Home</a></li> 
-                                        <li><a href="#">Login</a>
-                                        <ul class="submenu">
-                                            <% if user_signed_in? %>        
-                                                  <p class="text-center">BIENVENUE</p>
-                                                  <li><%= link_to "Mon compte", edit_user_registration_path %></li>
-                                                  <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
-                                                  <li><%= link_to "Mes commandes" %></li>
-                                                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
-                                            <% else %>          
-                                                  <li><%= link_to "Se connecter", new_user_session_path %></li>
-                                                  <li><%= link_to "S'inscrire", new_user_registration_path %></li>
-                                            <% end %>
-                                        </ul>
-                                        <li><a href="#">Contact</a></li>
-                                        <li>
-                                            <% if current_user && current_user.is_admin %>
-                                                <li><%= link_to "Admin Area", order_index_path %></li>
-                                            <% end %>
+                                        <li><a href="index.html">Home</a></li> 
+                                        <li><a href="shop.html">shop</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="blog.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog_details.html">Blog Details</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                                <li><a href="product_details.html">Product Details</a></li>
+                                            </ul>
                                         </li>
+                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>   
-
                         </div>
                         <div class="header-right1 d-flex align-items-center">
                             <!-- Social -->
@@ -44,21 +36,30 @@
                                 <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-pinterest-p"></i></a>
                             </div>
-                            <!-- Card Box -->
+                            <!-- Search Box -->
                             <div class="search d-none d-md-block">
                                 <ul class="d-flex align-items-center">
-                                    <li>
-                                        <%if user_signed_in?%>
-                                        <div class="card-stor">
-                                            <a href=<%=cart_path(current_user.id)%>>
-                                            <i class="fas fa-shopping-basket"></i>
-                                            </a>
-                                            <span><%=number_of_items_on_cart%></span>
+                                    <li class="mr-15">
+                                        <div class="nav-search search-switch">
+                                            <i class="ti-search"></i>
                                         </div>
-                                        <%end%>
+                                    </li>
+                                    <li>
+                                        <div class="card-stor">
+                                            <img src="assets/img/gallery/card.svg" alt="">
+                                            <span>0</span>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                         </div>
-          
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>

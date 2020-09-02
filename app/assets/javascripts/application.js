@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery-1.12.4.min
+//= require bootstrap.min
+//= require jquery.slicknav.min
+//= require main
+//= require modernizr-3.5.0.min
