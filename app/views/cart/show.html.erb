@@ -41,13 +41,26 @@
     <div class="row">
       <tr>
       <td>Le montant est de : </td>
-      <td><%= sum %> €</td>
+      <td><%= sum %> € </td>
+      <td>
+        <% if current_user %>
+            <%= form_tag charges_path(:price => sum) do %>
+                <article>
+                  <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                      <p><%= flash[:error] %></p>
+                    </div>
+                  <% end %>
+                </article>
 
-      <% if current_user %>
-        <td><%= link_to "Pay", new_charge_path(:price => sum), class: "btn btn-warning" %></td>
-        <td><%#= link_to "Pay test", order_index_path(:price => sum), method: 'post', class: "btn btn-warning" %></td>
-
-      <% end %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description= "Hello"
+                    data-amount= "<%=sum *100%>"
+                    data-locale="auto"></script>
+            <% end %>
+        <% end %>
+      </td>
     </tr>
     </div>
     </div>
