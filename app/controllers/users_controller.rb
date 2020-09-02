@@ -6,6 +6,6 @@ class UsersController < ApplicationController
     #   redirect_to root
     # end
 
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
   end
 end
