@@ -42,11 +42,11 @@
       <tr>
       <td>Le montant est de : </td>
       <td><%= sum %> €</td>
-    </div>
-      <div class="row">
-      <tr>
-     <% if current_user %>
-        <td><%= link_to "Paiement", new_charge_path(:price => sum), class: "button-cart" %></td>
+
+      <% if current_user %>
+        <td><%= link_to "Pay", new_charge_path(:price => sum), class: "btn btn-warning" %></td>
+        <td><%#= link_to "Pay test", order_index_path(:price => sum), method: 'post', class: "btn btn-warning" %></td>
+
       <% end %>
     </tr>
     </div>
