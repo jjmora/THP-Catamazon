@@ -29,13 +29,14 @@ class ChargesController < ApplicationController
 
 
     UserMailer.order_email(current_user).deliver_now
+    AdminMailer.passed_order.deliver_now
 
     @current_cart_items.each do |listorder|
       ListOrder.create!(order_id: @order.id, item_id: listorder.id)
     end
 
     redirect_to root_path
-    
+
     
     ListItem.where(cart_id: @current_cart.first.id).destroy_all
 
