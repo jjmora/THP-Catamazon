@@ -13,7 +13,7 @@ User.destroy_all
 Cart.destroy_all
 ListItem.destroy_all
 
-10.times do |x|
+1.times do |x|
   user = User.create!(
     email: Faker::Internet.email,
     password:"azerty",
