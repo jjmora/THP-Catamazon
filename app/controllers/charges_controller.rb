@@ -31,9 +31,8 @@ class ChargesController < ApplicationController
     end
 
     redirect_to root_path
-    puts "# "*30
+    
     ListItem.where(cart_id: @current_cart.first.id).destroy_all
-    puts "# "*30
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

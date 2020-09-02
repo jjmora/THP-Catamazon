@@ -11,6 +11,7 @@ class OrderController < ApplicationController
     @items = @order.items
   end
   
+
   # def create   
   #   @price = params[:price]
   #   @order = Order.create!(price: @price, user_id: current_user.id )
