@@ -11,16 +11,24 @@
   <li>Avatar attaché: <%= @user.avatar.attached? %></li>
 </ul>
 
+
 <!-- show avatar if available -->
+<h2>Avatar</h2>
 <%= if @user.avatar.attached? %>
   <%= image_tag @user.avatar, alt: 'avatar' %>
 <%else%>
   <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
 <%end%>
 
+<!-- show to update avatar --<
+<h3>Modifie avatar</h3>
+<%= form_tag user_avatars_path(@user), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
 <!-- show orders if admin -->
+<h3>Ordres si admin</h3>
 <%= if @user.is_admin? %>
   <%= link_to "Orders", _path%>
 <% end %>
-
-
