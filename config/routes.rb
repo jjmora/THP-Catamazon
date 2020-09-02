@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'avatars/create'
   get 'users/show'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -12,5 +13,7 @@ Rails.application.routes.draw do
   
 
   resources :order, only: [:index, :show, :create, :update, :destroy]
-  resources :user, only: [:show]
+  resources :users, only: [:show] do
+    resources :avatars, only: [:create]
+  end
 end
