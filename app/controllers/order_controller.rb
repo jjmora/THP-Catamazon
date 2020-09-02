@@ -1,9 +1,8 @@
 class OrderController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @orders = Order.all
-    puts Order.first.items_ordered
-
   end
 
   def show
