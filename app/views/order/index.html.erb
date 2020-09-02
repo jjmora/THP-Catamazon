@@ -1,6 +1,8 @@
 <h1 class="text-center">Orders</h1>
 
+<% if Order.count > 0 %>
 <% Order.first.items_ordered %>
+<% end %>
 <table class="table">
   <thead>
     <tr>

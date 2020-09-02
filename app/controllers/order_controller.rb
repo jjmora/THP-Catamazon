@@ -3,8 +3,6 @@ class OrderController < ApplicationController
 
   def index
     @orders = Order.all
-    puts Order.first.items_ordered
-
   end
 
   def show
