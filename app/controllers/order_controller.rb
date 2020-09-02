@@ -1,6 +1,7 @@
 class OrderController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show]
-
+  before_action :check_if_admin
+  
   def index
     @orders = Order.all
   end
@@ -26,5 +27,14 @@ class OrderController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def check_if_admin
+    unless current_user.is_admin
+      redirect_to root_path
+    end
+
   end
 end
