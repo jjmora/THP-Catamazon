@@ -1,26 +1,53 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+
+<div class="limiter">
+		<div class="container-login100" style="background-image: url(https://voyage-onirique.com/wp-content/uploads/2020/05/backiee-164597-landscape.jpg);">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+          <span class="login100-form-title p-b-34 p-t-27">
+						Se connecter
+					</span>
+
+
+  <div class="wrap-input100">
+  <div class="input100">
+      <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
+  <div class="wrap-input100">
+  <div class="input100">
+      <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+  </div>
+
+<div class="contact100-form-checkbox">
+  <div class="input100">
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
+</div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+<div class="container-login100-form-btn">
+  <div class="login100-form-btn">
+    <%= f.submit "Connexion" %>
   </div>
 <% end %>
+  </div>
+
 
 <%= render "devise/shared/links" %>
+		</div>
+				</form>
+			</div>
+		</div>
+	</div>

@@ -3,3 +3,6 @@
 <p>Id: <%= @user.id %></p>
 <p>Email: <%= @user.email %></p>
 <p>Is admin?: <%= @user.is_admin %></p>
+<%= if @user.is_admin %>
+  <%= link_to "Orders", _path%>
+<% end %>
