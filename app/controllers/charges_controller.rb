@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
   
   def create
     # Amount in cents
-    @amount = @@price.to_i
+    @amount = @@price.to_i*100
   puts @amount
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -25,6 +25,9 @@ class ChargesController < ApplicationController
     @order = Order.create!(price: @@price, user_id: current_user.id )
     @current_cart = Cart.where(user_id: current_user.id)
     @current_cart_items = @current_cart.first.items
+
+
+    UserMailer.order_email(current_user).deliver_now
 
     @current_cart_items.each do |listorder|
       ListOrder.create!(order_id: @order.id, item_id: listorder.id)
