@@ -14,7 +14,7 @@
 
 <!-- show avatar if available -->
 <h2>Avatar</h2>
-<%= if @user.avatar.attached? %>
+<% if @user.avatar.is_attached? %>
   <%= image_tag @user.avatar, alt: 'avatar' %>
 <%else%>
   <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
@@ -29,6 +29,6 @@
 
 <!-- show orders if admin -->
 <h3>Ordres si admin</h3>
-<%= if @user.is_admin? %>
+<% if @user.is_admin? %>
   <%= link_to "Orders", _path%>
 <% end %>
