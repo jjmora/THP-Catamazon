@@ -19,10 +19,20 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: @amount,
       description: 'Rails Stripe customer',
-      currency: 'usd',
+      currency: 'usd'
     })
-  a = Order.create(price: @@price, user_id: current_user.id)
-  redirect_to root_path
+
+    @order = Order.create!(price: @@price, user_id: current_user.id )
+    @current_cart = Cart.where(user_id: current_user.id)
+    @current_cart_items = @current_cart.first.items
+
+    @current_cart_items.each do |listorder|
+      ListOrder.create!(order_id: @order.id, item_id: listorder.id)
+    end
+
+    redirect_to root_path
+    
+    ListItem.where(cart_id: @current_cart.first.id).destroy_all
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

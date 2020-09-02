@@ -1,9 +1,17 @@
+<div class="container">
+   <div class="card shopping-cart">
+            <div class="card-header titre-cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Contenu de votre panier
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
 
 <table class="table"style="">
   <thead>
     <tr class="text-center">
-      <th scope="col">#</th>
-      <th scope="col">#</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Ref</th>
       <th scope="col">Title</th>
       <th scope="col">Price</th>
       <th scope="col">Action</th>
@@ -18,21 +26,36 @@
         <%sum+=list.item.price%>
         <%x+=1%>
         <td><%= x-1%></td>
-        <td><%= list.id%></td>
+        <td>ref-00<%= list.id%>15-cat</td>
         <td><%= list.item.title%></td>
         <td><%= list.item.price%> €</td>
-        <td><%= link_to "Delete", list_item_path(list.id, :cart_id => list.cart_id), method: 'delete', class: 'btn btn-danger' %></td>
+        <td><%= link_to "Delete", list_item_path(list.id, :cart_id => list.cart_id), method: 'delete', class: 'button-cart-delete' %></td>
       <%end%>
     </tr>
     <%end%>
   </tbody>
-    <tfoot>
-    <tr>
-      <td>Sum</td>
+</table>
+                   
+<div class="card-footer">
+  <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
+    <div class="row">
+      <tr>
+      <td>Le montant est de : </td>
       <td><%= sum %> €</td>
+
       <% if current_user %>
         <td><%= link_to "Pay", new_charge_path(:price => sum), class: "btn btn-warning" %></td>
+        <td><%#= link_to "Pay test", order_index_path(:price => sum), method: 'post', class: "btn btn-warning" %></td>
+
       <% end %>
     </tr>
-  </tfoot>
-</table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div><br><br>
+    </div>
+
+
+
+            
