@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :cart
   has_many :orders
 
-  after_create :cart_creation
+  after_create :cart_creation, :welcome_send
 
   validates :email, uniqueness: true
 
@@ -21,8 +21,12 @@ class User < ApplicationRecord
     Cart.create(
       user_id: User.find_by(email: email).id
     )
-
   end
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 
   
   
