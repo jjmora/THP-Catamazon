@@ -1,7 +1,6 @@
 module ApplicationHelper
 
    def number_of_items_on_cart
-    if current_user.cart
       @id = current_user.cart.items.length
       puts "*"*100
       @id
@@ -11,6 +10,5 @@ module ApplicationHelper
       else
         x=@id
       end
-    end
    end 
 end
