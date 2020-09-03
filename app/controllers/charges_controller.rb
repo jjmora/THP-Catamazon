@@ -3,13 +3,7 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     @price = params[:price].to_f
-    puts "/"*150
-    puts @price
-    puts "/"*150
     @amount = @price*100
-    puts "$"*150
-    puts @amount.to_i
-    puts "$"*150
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
@@ -50,7 +44,7 @@ private
   end
 
   def admin_email
-    AdminMailer.passed_order.deliver_now
+    AdminMailer.with(sum: @price, user_id: current_user.id ).passed_order.deliver_now
   end
 
   def list_order_creation

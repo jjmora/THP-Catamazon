@@ -27,5 +27,7 @@
   </tbody>
 </table>
 <div>
+<%unless @a.nil?%>
 Le panier moyen est de <%=@a.round(2)%> €.
+<%end%>
 </div>
