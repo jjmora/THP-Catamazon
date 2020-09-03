@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# Use The Hacking Project's version for ruby
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,10 +49,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Adds better_errors
-  gem 'better_errors'
-  # Adds advanced features for better_errors
-  gem 'binding_of_caller'
 end
 
 group :test do
@@ -65,11 +62,23 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+# Adds better_errors
+gem 'better_errors'
+# Adds advanced features for better_errors
+gem 'binding_of_caller'
+# Adds table_print
 gem 'table_print'
+# Adds faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+# Adds letter_opener
 gem 'letter_opener'
+# Adds devise
 gem 'devise'
+# Adds stripe
 gem 'stripe'
+# Adds mailjet
 gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+# Adds dotenv-rails
 gem 'dotenv-rails'
+# Adds Amaozon S3 gem
+gem 'aws-sdk-s3', require: false
