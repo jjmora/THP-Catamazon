@@ -49,12 +49,12 @@
                                 <ul class="d-flex align-items-center">
                                     <li>
                                         <%if user_signed_in?%>
+                                        <a href=<%=cart_path(current_user.id)%>>
                                         <div class="card-stor">
-                                            <a href=<%=cart_path(current_user.id)%>>
                                             <i class="fas fa-shopping-basket"></i>
-                                            </a>
-                                            <span><%=number_of_items_on_cart%></span>
+                                            <span><%=number_of_items_on_cart%></span>  
                                         </div>
+                                        </a>
                                         <%end%>
                                     </li>
                                 </ul>
