@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: @amount.to_i,
       description: 'Rails Stripe customer',
-      currency: 'usd'
+      currency: 'eur'
     })
 
     order_creation
@@ -46,7 +46,7 @@ private
   end
 
   def user_order
-    UserMailer.order_email(current_user).deliver_now
+    UserMailer.with(sum: @price).order_email(current_user).deliver_now
   end
 
   def admin_email

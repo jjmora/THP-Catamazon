@@ -4,17 +4,47 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Ta commande est validée !</h1>
+    <h1>Votre commande est bien validée !</h1>
     <p>
-      Ta commande est bien validée.
+      Votre commande est bien validée.
     </p>
+    <p>
+    Voici les articles que vous avez commandés :
+    </p>
+
+  <table class="table"style="">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Quantité</th>
+      <th scope="col">Ref</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%ListItem.where(cart_id: Cart.where(user_id: @user.id)).each do |x|%>
+    <tr class ="text-center">
+        <td>1</td>
+        <td>ref-00<%= x.id%>15-cat</td>
+        <td><%= x.item.title%></td>
+        <td><%= x.item.price%> €</td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<p>
+Les images que vous avez achetées :
+</p>
     <%ListItem.where(cart_id: Cart.where(user_id: @user.id)).each do |x|%>
       <div>
         <%= x.item.image_url%>
       </div>
     <%end%>
 
-    
-    <p> À très vite sur catmazon.fr !</p>
+    <div>
+    <p>Le montant total de votre commande s'élève à <%=@sum%>€</p>
+    </div>
+    <p> À très vite sur CatMazon.fr !</p>
   </body>
 </html>
