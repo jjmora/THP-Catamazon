@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     puts "User show controller"
     @user = User.find_by_id(params[:id])
+    @orders = @user.orders
   end
 
   def check_user
