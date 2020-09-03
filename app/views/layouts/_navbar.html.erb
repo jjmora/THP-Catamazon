@@ -19,7 +19,7 @@
                                                   <p class="text-center">BIENVENUE</p>
                                                   <li><%= link_to "Editer mon compte", edit_user_registration_path %></li>
                                                   <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
-                                                  <li><%= link_to "Mes commandes", user_path(current_user.id) %></li>
+                                                  <li><%= link_to "Mon Profil", user_path(current_user.id) %></li>
                                                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
                                             <% else %>          
                                                   <li><%= link_to "Se connecter", new_user_session_path %></li>
