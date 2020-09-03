@@ -1,40 +1,35 @@
 <div class="new-arrival">
-    <div class="container">
-                        
-        <div class="row">
-           <% @items.each do |item| %>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-           
-                <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-           
-                    <div class="popular-img">
-                        <img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg" alt="">
-                    </div>
-           
-                    <div class="popular-caption">
-                        <h3> <%= link_to item.title, item_path(item.id) %></h3>
-                        <p><%= item.description %></p>
-
-                        <div>
-                        <%= item.price %> €
-                        </div>  
-
-                        <div class="rating mb-10">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-
-                        <div>
-                        <% if user_signed_in? %>
-                            <%= link_to "add to cart", list_items_path(:item_id => item.id), method: :post, class: "btn btn-primary"%>
-                        <%end%>
-                        </div>
-                    </div>                         
-                </div>      
-            </div>          
-        <% end %>
-      </div>    
-    </div>    
+  <div class="container">                      
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">  
+          <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"> 
+            <div class="popular-img">
+              <% if item.image.attached? %>
+                <%= image_tag item.image %>   
+              <% end %>
+            </div>
+            <div class="popular-caption">
+              <h3> <%= link_to item.title, item_path(item.id) %></h3>
+              <p><%= item.description %></p>
+              <div>
+                <%= item.price %> €
+              </div>  
+             <div class="rating mb-10">
+               <i class="fa fa-star"></i>
+               <i class="fa fa-star"></i>
+               <i class="fa fa-star"></i>
+               <i class="fa fa-star"></i>
+               <i class="fa fa-star"></i>
+             </div>
+             <div>
+               <% if user_signed_in? %>
+                 <%= link_to "add to cart", list_items_path(:item_id => item.id), method: :post, class: "btn btn-primary"%>
+               <%end%>
+             </div>
+           </div>                         
+         </div>      
+       </div>          
+     <% end %>
+  </div>    
+</div>    
