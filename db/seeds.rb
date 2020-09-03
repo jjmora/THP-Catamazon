@@ -16,6 +16,7 @@ require 'uri'
 User.destroy_all
 Cart.destroy_all
 ListItem.destroy_all
+Order.destroy_all
 x=1
 
 #seeding
