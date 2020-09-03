@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# for fake seeds
 require 'faker'
+# for urls
+require 'uri'
 
 # destroying old columns from tables
 Item.destroy_all
@@ -16,9 +19,9 @@ ListItem.destroy_all
 
 #seeding
 puts 'Seed begins'
-
+# begin seeding
 puts 'creating Users'
-
+# don t put long urls and long names for files
 1.times do |x|
   user = User.create!(
     email: "user@user.com",
@@ -36,18 +39,19 @@ User.create(
   password_confirmation:"azerty",
   is_admin: true
 )
-
+ 
 puts 'admin user created : admin@admin.com | azerty'
 
-puts 'creating items'
+puts 'creating 8 items' # was 10 but 8 is better for light use on s3
 
-20.times do |x|
+8.times.with_index do |x, index|
   item = Item.create(
     title: Faker::Creature::Cat.name,
     description: Faker::Creature::Cat.breed,
     price: Faker::Number.decimal(l_digits: 2),
     image_url: Faker::Creature::Cat.breed
   )
+  item.image.attach(io: File.open("app/assets/images/#{index+1}.jpg"), filename: "#{index+1}.jpg")
 end
 
 puts '20 items were created'
@@ -60,5 +64,5 @@ puts '20 items were created'
 end
 
 puts 'items were added to the list'
-
-puts 'Seed done !'
+# end of seed : are you here ?
+puts 'Seed done !' 
