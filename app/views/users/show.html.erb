@@ -1,5 +1,11 @@
-<h1 class="mt-5">Page Profil</h1>
-
+<div class="container"><br><br>
+   <div class="card shopping-cart">
+            <div class="card-header titre-cart">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Mon profil
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
 <table class="table">
   <thead>
     <tr>
@@ -18,7 +24,7 @@
     </tr>
   </tbody>
 </table>
-<%= link_to "Editer mon compte", edit_user_registration_path, class:"btn btn-info btn-sm"  %>
+<%= link_to "Editer mon compte", edit_user_registration_path, class:"button-cart"  %>
 <!-- welcome paragraph -->
 <%# <p>Bienvenue sur la page d'ajout d'un avatar pour le User suivant :</p> %>
 
@@ -40,8 +46,16 @@
 <% if @user.is_admin? %>
   <%= link_to "Orders", root_path, class: "btn btn-secondary"%>
 <% end %>
+</div></div></div></div>
 
-<h1>My Orders</h1>
+<div class="container"><br><br>
+   <div class="card shopping-cart">
+            <div class="card-header titre-cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Mes derniers achats
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
 <table class="table">
   <thead>
     <tr>
@@ -78,8 +92,10 @@
         <td><%= item.price %></td>
         <td><%= button_to "Product", item_path(item.id) , class: "btn btn-info", method: 'get'%></td>
       </tr>
+      </div>
       <% end %>
     <% end %>
 
   </tbody>
 </table>
+</div></div></div><br><br>
