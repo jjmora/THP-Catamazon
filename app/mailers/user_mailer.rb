@@ -9,11 +9,7 @@ class UserMailer < ApplicationMailer
 
 
   def order_email(current_user)
-    puts "*"*150
-    p current_user.email
-    puts "*"*150
     @sum = params[:sum]
-    puts @sum
     @user = current_user
     @url  = 'http://monsite.fr/login' 
     mail(to: @user.email, subject: 'Votre commande a été passé !') 
