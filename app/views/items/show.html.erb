@@ -32,13 +32,9 @@
                             <p><%= @item.description %> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
                         </div>
                         <div>
-                         <!-- 
-                              <%= link_to "Items", items_path %>
-                          -->
-                           <% if @item.image.attached? %>
-                             <%= image_tag item.image, style: "width: 200px; display: block" %>   
-                           <% end %>
-
+                          <% if @item.image.attached? %>
+                            <%= image_tag item.image %>   
+                          <% end %>
                            <% if user_signed_in? %>
                             <%= link_to "add to cart", list_items_path(:item_id => @item.id), method: :post, class: "btn btn-primary"%>
                           <%end%>
