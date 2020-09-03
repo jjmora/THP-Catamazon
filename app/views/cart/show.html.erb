@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"><br><br>
    <div class="card shopping-cart">
             <div class="card-header titre-cart">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -43,6 +43,7 @@
       <td>Le montant est de : </td>
       <td><%= sum %> € </td>
       <td>
+      <%if sum > 0%>
         <% if current_user %>
             <%= form_tag charges_path(:price => sum) do %>
                 <article>
@@ -57,8 +58,11 @@
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description= "Hello"
                     data-amount= "<%=sum *100%>"
-                    data-locale="eur"></script>
+                    data-locale="auto"
+                    data-currency="eur">
+                    </script>
             <% end %>
+          <%end%>
         <% end %>
       </td>
     </tr>
