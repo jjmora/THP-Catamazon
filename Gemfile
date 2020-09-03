@@ -67,6 +67,8 @@ group :development do
   gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
   # Adds dotenv-rails
   gem 'dotenv-rails'
+  # Adds Amaozon S3 gem
+  gem 'aws-sdk-s3', require: false
 end
 
 group :test do
