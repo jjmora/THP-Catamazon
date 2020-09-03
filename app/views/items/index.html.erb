@@ -8,7 +8,9 @@
                 <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
            
                     <div class="popular-img">
-                        <img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554_960_720.jpg" alt="">
+                          <% if @item.image.attached? %>
+                            <%= image_tag item.image, style: "width: 200px; display: block" %>   
+                          <% end %>
                     </div>
            
                     <div class="popular-caption">
