@@ -1,5 +1,4 @@
 class ChargesController < ApplicationController
-  @@price = 0
   
   def create
     # Amount in cents
@@ -23,25 +22,46 @@ class ChargesController < ApplicationController
       currency: 'usd'
     })
 
-    @order = Order.create!(price: @price, user_id: current_user.id )
+    order_creation
+
     @current_cart = Cart.where(user_id: current_user.id)
     @current_cart_items = @current_cart.first.items
 
-
-    UserMailer.order_email(current_user).deliver_now
-    AdminMailer.passed_order.deliver_now
-
-    @current_cart_items.each do |listorder|
-      ListOrder.create!(order_id: @order.id, item_id: listorder.id)
-    end
+    user_order
+    admin_email
+    list_order_creation
+    list_item_destroy
 
     redirect_to root_path
 
-    
-    ListItem.where(cart_id: @current_cart.first.id).destroy_all
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
   end
+
+private
+
+  def order_creation
+    @order = Order.create!(price: @price, user_id: current_user.id )
+  end
+
+  def user_order
+    UserMailer.order_email(current_user).deliver_now
+  end
+
+  def admin_email
+    AdminMailer.passed_order.deliver_now
+  end
+
+  def list_order_creation
+    @current_cart_items.each do |listorder|
+      ListOrder.create!(order_id: @order.id, item_id: listorder.id)
+    end
+  end
+
+  def list_item_destroy
+    ListItem.where(cart_id: @current_cart.first.id).destroy_all
+  end
+
+
 end

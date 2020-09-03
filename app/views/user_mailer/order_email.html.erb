@@ -8,6 +8,13 @@
     <p>
       Ta commande est bien validée.
     </p>
-    <p> À très vite sur catmazon.fr !
+    <%ListItem.where(cart_id: Cart.where(user_id: @user.id)).each do |x|%>
+      <div>
+        <%= x.item.image_url%>
+      </div>
+    <%end%>
+
+    
+    <p> À très vite sur catmazon.fr !</p>
   </body>
 </html>
