@@ -10,7 +10,7 @@
               <% end %>
             </div>
             <div class="popular-caption">
-              <h3> <%= link_to item.title, item_path(item.id) %></h3>
+              <h3> <%= link_to item.title, item_path(item.slug) %></h3>
               <p><%= item.description %></p>
               <div>
                 <%= item.price %> €

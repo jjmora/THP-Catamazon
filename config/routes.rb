@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/contact", to: "application#contact"
 
   devise_for :users
-  resources :items
+  resources :items, param: :slug
   resources :cart, only: [:create, :update, :new, :destroy, :show]
   resources :list_items, only: [:create, :update, :new, :destroy]
 

@@ -12,10 +12,11 @@ require 'faker'
 require 'uri'
 
 # destroying old columns from tables
-Item.destroy_all
+# Item.destroy_all
 User.destroy_all
 Cart.destroy_all
 ListItem.destroy_all
+x=1
 
 #seeding
 puts 'Seed begins'
@@ -44,19 +45,26 @@ puts 'admin user created : admin@admin.com | azerty'
 
 puts 'creating 8 items' # was 10 but 8 is better for light use on s3
 
-8.times.with_index do |x, index|
-  item = Item.create(
-    title: Faker::Creature::Cat.name,
-    description: Faker::Creature::Cat.breed,
-    price: Faker::Number.decimal(l_digits: 2),
-    image_url: Faker::Creature::Cat.breed
-  )
-  item.image.attach(io: File.open("app/assets/images/#{index+1}.jpg"), filename: "#{index+1}.jpg")
+# 8.times.with_index do |x, index|
+#   item = Item.create(
+#     title: Faker::Creature::Cat.name,
+#     description: Faker::Creature::Cat.breed,
+#     price: Faker::Number.decimal(l_digits: 2),
+#     image_url: Faker::Creature::Cat.breed
+#   )
+#   item.image.attach(io: File.open("app/assets/images/#{index+1}.jpg"), filename: "#{index+1}.jpg")
+# end
+
+
+Item.all.each do |item|
+  x+=1
+  item.slug = "cat-#{x-1}"
+  item.save
 end
 
 puts '20 items were created'
 
-30.times do |x|
+15.times do |x|
   list = ListItem.create!(
     cart_id: Cart.find(rand(Cart.first.id..Cart.last.id)).id,
     item_id: Item.find(rand(Item.first.id..Item.last.id)).id
