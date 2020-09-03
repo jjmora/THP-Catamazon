@@ -6,43 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# for fake seeds
 require 'faker'
+# for urls
 require 'uri'
 
 # destroying old columns from tables
 Item.destroy_all
-#User.destroy_all
-#Cart.destroy_all
-#ListItem.destroy_all
+User.destroy_all
+Cart.destroy_all
+ListItem.destroy_all
 
 #seeding
 puts 'Seed begins'
-
+# begin seeding
 puts 'creating Users'
-
-#1.times do |x|
-#  user = User.create!(
-#    email: "user@user.com",
-#    password:"azerty",
-#    password_confirmation:"azerty",
-#    is_admin: false
-#  )
-#end
+# don t put long urls and long names for files
+1.times do |x|
+  user = User.create!(
+    email: "user@user.com",
+    password:"azerty",
+    password_confirmation:"azerty",
+    is_admin: false
+  )
+end
 
 puts 'simple user created : user@user.com | azerty'
 
-#User.create(
-#  email: "admin@admin.com",
-#  password:"azerty",
-#  password_confirmation:"azerty",
-#  is_admin: true
-#)
-# wait open that link i sent on 
+User.create(
+  email: "admin@admin.com",
+  password:"azerty",
+  password_confirmation:"azerty",
+  is_admin: true
+)
+ 
 puts 'admin user created : admin@admin.com | azerty'
-# maybe link too long ?
-puts 'creating 8 items'
 
-
+puts 'creating 8 items' # was 10 but 8 is better for light use on s3
 
 8.times.with_index do |x, index|
   item = Item.create(
@@ -56,13 +56,13 @@ end
 
 puts '20 items were created'
 
-#30.times do |x|
-#  list = ListItem.create!(
-#    cart_id: Cart.find(rand(Cart.first.id..Cart.last.id)).id,
-#    item_id: Item.find(rand(Item.first.id..Item.last.id)).id
-#  )
-#end
+30.times do |x|
+  list = ListItem.create!(
+    cart_id: Cart.find(rand(Cart.first.id..Cart.last.id)).id,
+    item_id: Item.find(rand(Item.first.id..Item.last.id)).id
+  )
+end
 
 puts 'items were added to the list'
-# are you here ?
+# end of seed : are you here ?
 puts 'Seed done !' 
