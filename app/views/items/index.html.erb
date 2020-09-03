@@ -8,8 +8,8 @@
                 <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
            
                     <div class="popular-img">
-                          <% if @item.image.attached? %>
-                            <%= image_tag item.image, style: "width: 200px; display: block" %>   
+                          <% if item.image.attached? %>
+                            <%= image_tag item.image %>   
                           <% end %>
                     </div>
            

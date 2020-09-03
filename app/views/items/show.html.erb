@@ -33,7 +33,7 @@
                         </div>
                         <div>
                           <% if @item.image.attached? %>
-                            <%= image_tag item.image, style: "width: 200px; display: block" %>   
+                            <%= image_tag item.image %>   
                           <% end %>
                            <% if user_signed_in? %>
                             <%= link_to "add to cart", list_items_path(:item_id => @item.id), method: :post, class: "btn btn-primary"%>
