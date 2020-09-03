@@ -33,8 +33,4 @@ class OrderController < ApplicationController
     end
   end
 
-  def average_cart
-
-  end
-
 end

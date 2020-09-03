@@ -18,7 +18,7 @@
                                             <% if user_signed_in? %>        
                                                   <p class="text-center">BIENVENUE</p>
                                                   <li><%= link_to "Editer mon compte", edit_user_registration_path %></li>
-                                                  <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
+                                                  <li><%= link_to "Mon panier", cart_path(current_user.cart.slug)%></li>
                                                   <li><%= link_to "Mon Profil", user_path(current_user.id) %></li>
                                                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
                                             <% else %>          
@@ -49,7 +49,7 @@
                                 <ul class="d-flex align-items-center">
                                     <li>
                                         <%if user_signed_in?%>
-                                        <a href=<%=cart_path(current_user.id)%>>
+                                        <a href=<%=cart_path(current_user.cart.slug)%>>
                                         <div class="card-stor">
                                             <i class="fas fa-shopping-basket"></i>
                                             <span><%=number_of_items_on_cart%></span>  

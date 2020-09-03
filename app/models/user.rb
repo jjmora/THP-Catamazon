@@ -19,7 +19,8 @@ class User < ApplicationRecord
     puts User.find_by(email: email).id
     
     Cart.create(
-      user_id: User.find_by(email: email).id
+      user_id: User.find_by(email: email).id,
+      slug: "your-cart-#{User.find_by(email: email).id}"
     )
   end
 

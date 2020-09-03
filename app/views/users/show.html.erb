@@ -90,7 +90,7 @@
         <td><%= item.title %></td>
         <td><%= item.description %></td>
         <td><%= item.price %></td>
-        <td><%= button_to "Product", item_path(item.id) , class: "btn btn-info", method: 'get'%></td>
+        <td><%= button_to "Product", item_path(item.slug) , class: "btn btn-info", method: 'get'%></td>
       </tr>
       </div>
       <% end %>

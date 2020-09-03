@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :items, param: :slug
-  resources :cart, only: [:create, :update, :new, :destroy, :show]
+  resources :cart, only: [:create, :update, :new, :destroy, :show], param: :slug
   resources :list_items, only: [:create, :update, :new, :destroy]
 
   resources :charges
