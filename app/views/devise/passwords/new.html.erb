@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class=""><img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/FR/fr/999/EP4396-CUSA10659_00-AV00000000000038/1575450121000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" style="width:130px;height:130px;"></i>
+					</span>
+          <span class="login100-form-title p-b-34 p-t-27">
+						Mot de passe oublié
+					</span>
 
-  <div class="actions">
+  
+ <div class="input100"><%= f.label :email %> </div>
+ <div class="wrap-input100"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+
+<div class="container-login100-form-btn">
+  <div class="login100-form-btn">
     <%= f.submit "Send me reset password instructions" %>
-  </div>
+  </div> </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+  </div>
+    </div>
+      </div>

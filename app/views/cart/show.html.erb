@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"><br><br>
    <div class="card shopping-cart">
             <div class="card-header titre-cart">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -58,8 +58,13 @@
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description= "Hello"
                     data-amount= "<%=sum *100%>"
-                    data-locale="eur"></script>
-            <% end %><%= render "layouts/navbar" %>
+                    data-locale="auto"
+                    data-currency="eur">
+                    </script>
+            <% end %>
+          <%end%>
+        <% end %>
+      </td>
     </tr>
     </div>
     </div>
