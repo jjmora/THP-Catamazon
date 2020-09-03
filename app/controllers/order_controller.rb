@@ -8,7 +8,9 @@ class OrderController < ApplicationController
     @orders.each do |x|
       @total_price += x.price
     end
+    if @orders.length > 0
     @a = @total_price/@orders.length
+    end
   end
 
   def show
