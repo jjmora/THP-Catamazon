@@ -82,3 +82,5 @@ gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 gem 'dotenv-rails'
 # Adds Amaozon S3 gem
 gem 'aws-sdk-s3', require: false
+#Adds Friendly Id
+gem 'friendly_id', '~> 5.1.0'
