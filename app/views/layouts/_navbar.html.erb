@@ -17,16 +17,16 @@
                                         <ul class="submenu">
                                             <% if user_signed_in? %>        
                                                   <p class="text-center">BIENVENUE</p>
-                                                  <li><%= link_to "Mon compte", edit_user_registration_path %></li>
+                                                  <li><%= link_to "Editer mon compte", edit_user_registration_path %></li>
                                                   <li><%= link_to "Mon panier", cart_path(current_user.id)%></li>
-                                                  <li><%= link_to "Mes commandes", user_path(current_user.id) %></li>
+                                                  <li><%= link_to "Mon Profil", user_path(current_user.id) %></li>
                                                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
                                             <% else %>          
                                                   <li><%= link_to "Se connecter", new_user_session_path %></li>
                                                   <li><%= link_to "S'inscrire", new_user_registration_path %></li>
                                             <% end %>
                                         </ul>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><%= link_to "Contact", contact_path %></li>
                                         <li>
                                             <% if current_user && current_user.is_admin %>
                                                 <li><%= link_to "Admin Area", order_index_path %></li>
