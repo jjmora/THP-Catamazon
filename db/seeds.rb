@@ -8,19 +8,27 @@
 
 require 'faker'
 
+# destroying old columns from tables
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
 ListItem.destroy_all
 
+#seeding
+puts 'Seed begins'
+
+puts 'creating Users'
+
 1.times do |x|
   user = User.create!(
-    email: Faker::Internet.email,
+    email: "user@user.com",
     password:"azerty",
     password_confirmation:"azerty",
     is_admin: false
   )
 end
+
+puts 'simple user created : user@user.com | azerty'
 
 User.create(
   email: "admin@admin.com",
@@ -28,6 +36,10 @@ User.create(
   password_confirmation:"azerty",
   is_admin: true
 )
+
+puts 'admin user created : admin@admin.com | azerty'
+
+puts 'creating items'
 
 20.times do |x|
   item = Item.create(
@@ -38,11 +50,15 @@ User.create(
   )
 end
 
+puts '20 items were created'
+
 30.times do |x|
   list = ListItem.create!(
     cart_id: Cart.find(rand(Cart.first.id..Cart.last.id)).id,
     item_id: Item.find(rand(Item.first.id..Item.last.id)).id
   )
 end
+
+puts 'items were added to the list'
 
 puts 'Seed done !'
