@@ -4,6 +4,11 @@ class OrderController < ApplicationController
   
   def index
     @orders = Order.all
+    @total_price = 0
+    @orders.each do |x|
+      @total_price += x.price
+    end
+    @a = @total_price/@orders.length
   end
 
   def show
@@ -11,18 +16,6 @@ class OrderController < ApplicationController
     @items = @order.items
   end
   
-
-  # def create   
-  #   @price = params[:price]
-  #   @order = Order.create!(price: @price, user_id: current_user.id )
-  #   @current_cart = Cart.where(user_id: current_user.id)
-  #   @current_cart_items = @current_cart.first.items
-
-  #   @current_cart_items.each do |listorder|
-  #     ListOrder.create!(order_id: @order.id, item_id: listorder.id)
-  #   end
-  #   redirect_to order_index_path
-  # end
 
   def update
   end
@@ -36,6 +29,10 @@ class OrderController < ApplicationController
     unless current_user.is_admin
       redirect_to order_index_path
     end
+  end
+
+  def average_cart
 
   end
+
 end
