@@ -1,16 +1,26 @@
-<h1>Page Profil</h1>
+<h1 class="mt-5">Page Profil</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Identifiant</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Administrateur</th>
+      <th scope="col">Avatar attaché</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @user.id %></th>
+      <td><%= @user.email %></td>
+      <td><%= @user.is_admin? %></td>
+      <td><%= @user.avatar.attached? %></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- welcome paragraph -->
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User suivant :</p>
-
-<!-- show list of information about user -->
-<ul>
-  <li>Identifiant: <%= @user.id %></li>
-  <li>E-mail: <%= @user.email %></li>
-  <li>Administrateur: <%= @user.is_admin? %></li>
-  <li>Avatar attaché: <%= @user.avatar.attached? %></li>
-</ul>
-
+<%# <p>Bienvenue sur la page d'ajout d'un avatar pour le User suivant :</p> %>
 
 <!-- show avatar if available -->
 <h2>Avatar</h2>
@@ -20,15 +30,56 @@
   <p>Il n'y a pas encore d'avatar lié à cet utilisateur</p>
 <%end%>
 
-<!-- show to update avatar --<
+<!-- show to update avatar
 <h3>Modifie avatar</h3>
 <%= form_tag user_avatars_path(@user), multipart: true do %>
   <%= file_field_tag :avatar %>
   <%= submit_tag "mettre à jour" %>
+<% end %> -->
+
+<% if @user.is_admin? %>
+  <%= link_to "Orders", root_path, class: "btn btn-secondary"%>
 <% end %>
 
-<!-- show orders if admin -->
-<h3>Ordres si admin</h3>
-<% if @user.is_admin? %>
-  <%= link_to "Orders", _path%>
-<% end %>
+<h1>My Orders</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Price</th>
+      <th scope="col">Date</th>
+      <th scope="col">Item id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr class="bg-info">
+        <th scope="row"><%= order.id %></th>
+        <th><%= order.price %> €</th>
+        <th><%= order.created_at %></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% order.items.each do |item| %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= item.id %></td>
+        <td><%= item.title %></td>
+        <td><%= item.description %></td>
+        <td><%= item.price %></td>
+        <td><%= button_to "Product", item_path(item.id) , class: "btn btn-info", method: 'get'%></td>
+      </tr>
+      <% end %>
+    <% end %>
+
+  </tbody>
+</table>
