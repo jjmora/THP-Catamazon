@@ -40,7 +40,9 @@
                     </div> 
                     <div class="col-lg-4">
                         <div class="map">
-                             <%= image_tag @item.image, style:"width: 75%"%>
+                            <% if @item.image.attached? %>
+                                <%= image_tag @item.image, style:"width: 75%"%>
+                            <% end %>
                           </div> 
                     </div>
                 </div>
