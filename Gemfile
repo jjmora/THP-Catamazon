@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# Use The Hacking Project's version for ruby
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -52,6 +53,20 @@ group :development do
   gem 'better_errors'
   # Adds advanced features for better_errors
   gem 'binding_of_caller'
+  # Adds table_print
+  gem 'table_print'
+  # Adds faker
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  # Adds letter_opener
+  gem 'letter_opener'
+  # Adds devise
+  gem 'devise'
+  # Adds stripe
+  gem 'stripe'
+  # Adds mailjet
+  gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+  # Adds dotenv-rails
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -64,12 +79,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
-gem 'table_print'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-gem 'letter_opener'
-gem 'devise'
-gem 'stripe'
-gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
-gem 'dotenv-rails'
