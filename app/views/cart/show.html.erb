@@ -58,7 +58,9 @@
                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                     data-description= "Hello"
                     data-amount= "<%=sum *100%>"
-                    data-locale="eur"></script>
+                    data-locale="auto"
+                    data-currency="eur">
+                    </script>
             <% end %>
           <%end%>
         <% end %>
