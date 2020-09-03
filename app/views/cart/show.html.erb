@@ -43,6 +43,7 @@
       <td>Le montant est de : </td>
       <td><%= sum %> € </td>
       <td>
+      <%if sum > 0%>
         <% if current_user %>
             <%= form_tag charges_path(:price => sum) do %>
                 <article>
@@ -59,6 +60,7 @@
                     data-amount= "<%=sum *100%>"
                     data-locale="eur"></script>
             <% end %>
+          <%end%>
         <% end %>
       </td>
     </tr>
