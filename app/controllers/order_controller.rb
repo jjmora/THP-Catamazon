@@ -34,7 +34,7 @@ class OrderController < ApplicationController
 
   def check_if_admin
     unless current_user.is_admin
-      redirect_to root_path
+      redirect_to order_index_path
     end
 
   end

@@ -30,5 +30,5 @@
 <!-- show orders if admin -->
 <h3>Ordres si admin</h3>
 <% if @user.is_admin? %>
-  <%= link_to "Orders", _path%>
+  <%= link_to "Orders", root_path, class: "btn btn-secondary"%>
 <% end %>
