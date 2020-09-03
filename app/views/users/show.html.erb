@@ -18,12 +18,12 @@
     </tr>
   </tbody>
 </table>
-
+<%= link_to "Editer mon compte", edit_user_registration_path, class:"btn btn-info btn-sm"  %>
 <!-- welcome paragraph -->
 <%# <p>Bienvenue sur la page d'ajout d'un avatar pour le User suivant :</p> %>
 
 <!-- show avatar if available -->
-<h2>Avatar</h2>
+<h2 class="my-5">Avatar</h2>
 <% if @user.avatar.attached? %>
   <%= image_tag @user.avatar, alt: 'avatar' %>
 <%else%>
