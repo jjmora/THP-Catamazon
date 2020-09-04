@@ -23,8 +23,8 @@ class ChargesController < ApplicationController
     @current_cart = Cart.where(user_id: current_user.id)
     @current_cart_items = @current_cart.first.items
 
-    user_order
-    admin_email
+    # user_order
+    # admin_email
 
 
     redirect_to root_path
