@@ -37,7 +37,11 @@
 Les images que vous avez achetées :
 </p>
     <%ListItem.where(cart_id: Cart.where(user_id: @user.id)).each do |x|%>
-        <%= image_tag x.item.image, style:"width: 25%"%>   
+      <% if x.item.image.attached? %>
+          <%= image_tag x.item.image, style:"width: 25%"%>   
+      <%else%>
+          <%= x.item.image_url%>     
+      <%end%>
     <%end%>
 
     <div>
