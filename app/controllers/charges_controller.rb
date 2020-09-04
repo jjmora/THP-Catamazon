@@ -17,14 +17,15 @@ class ChargesController < ApplicationController
     })
 
     order_creation
+    list_order_creation
+    list_item_destroy
 
     @current_cart = Cart.where(user_id: current_user.id)
     @current_cart_items = @current_cart.first.items
 
     user_order
     admin_email
-    list_order_creation
-    list_item_destroy
+
 
     redirect_to root_path
 

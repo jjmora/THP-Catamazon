@@ -19,12 +19,12 @@ class User < ApplicationRecord
     puts User.find_by(email: email).id
     
     Cart.create(
-      user_id: User.find_by(email: email).id
+      user_id: User.find_by(email: email, is_admin: false ).id
     )
   end
 
   def welcome_send
-    UserMailer.welcome_email(self).deliver_now
+    # UserMailer.welcome_email(self).deliver_now
   end
 
 
