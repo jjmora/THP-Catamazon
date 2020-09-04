@@ -30,4 +30,11 @@ Nous demanderons pour la version minimaliste un fichier `seed.rb` qui contient q
 - Ajout d'un système de catégorisation des produits
 
 ## Team
-La team sans nom.
+* David Beraud
+* Kevin Phim
+* Sami Elatri
+* Juan José Mora
+
+## Site
+https://thp-catmazon-prod.herokuapp.com/
+
