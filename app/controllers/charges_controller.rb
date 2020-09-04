@@ -21,12 +21,12 @@ class ChargesController < ApplicationController
 
     order_creation
     list_order_creation
-    list_item_destroy
+
 
     user_order
     admin_email
 
-
+    list_item_destroy
     redirect_to root_path
 
     rescue Stripe::CardError => e
