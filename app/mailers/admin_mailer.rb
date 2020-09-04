@@ -1,5 +1,5 @@
 class AdminMailer < ApplicationMailer
-  default from: 'catmazon99@yopmail.com'
+  default from: 'catmazon@yopmail.com'
 
   def passed_order
     @sum = params[:sum]
