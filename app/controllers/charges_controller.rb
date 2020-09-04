@@ -23,8 +23,8 @@ class ChargesController < ApplicationController
     list_order_creation
     list_item_destroy
 
-    # user_order
-    # admin_email
+    user_order
+    admin_email
 
 
     redirect_to root_path
