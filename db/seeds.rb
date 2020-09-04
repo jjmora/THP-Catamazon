@@ -16,6 +16,7 @@ Item.destroy_all
 User.destroy_all
 Cart.destroy_all
 ListItem.destroy_all
+Order.destroy_all
 
 #seeding
 puts 'Seed begins'
