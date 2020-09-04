@@ -16,12 +16,12 @@ class ChargesController < ApplicationController
       currency: 'eur'
     })
 
+    @current_cart = Cart.where(user_id: current_user.id)
+    @current_cart_items = @current_cart.first.items
+
     order_creation
     list_order_creation
     list_item_destroy
-
-    @current_cart = Cart.where(user_id: current_user.id)
-    @current_cart_items = @current_cart.first.items
 
     # user_order
     # admin_email
@@ -49,8 +49,17 @@ private
   end
 
   def list_order_creation
+    puts "€ "*30
+    puts @current_cart_items
     @current_cart_items.each do |listorder|
+      puts "****"
+      puts listorder
+      puts "****"
+      puts listorder.id
+      puts @order.id
       ListOrder.create!(order_id: @order.id, item_id: listorder.id)
+      
+      puts "€ "*30
     end
   end
 
