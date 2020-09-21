@@ -36,5 +36,5 @@ Nous demanderons pour la version minimaliste un fichier `seed.rb` qui contient q
 * Juan José Mora
 
 ## Site
-https://thp-catmazon-prod.herokuapp.com/
+https://thp-catmazon-stag.herokuapp.com/
 
